@@ -14,5 +14,3 @@ a web component helps you detect network status easily
   <div class="offline_reminder">U r offline</div>
 </template>
 ```
-
-## Docs
