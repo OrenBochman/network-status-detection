@@ -1,0 +1,34 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+`network-status-detection`
+a web component helps you detect network status easily
+
+@demo demo/index.html 
+-->
+
+<dom-module id="network-status-detection">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[prop1]]</h2>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'network-status-detection',
+
+      properties: {
+        prop1: {
+          type: String,
+          value: 'network-status-detection',
+        },
+      },
+
+    });
+  </script>
+</dom-module>
