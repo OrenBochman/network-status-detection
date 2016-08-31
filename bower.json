@@ -2,6 +2,9 @@
   "name": "network-status-detection",
   "description": "a web component helps you detect network status easily",
   "main": "network-status-detection.html",
+  "keyword": [
+    "web-components"
+  ],
   "dependencies": {
     "polymer": "Polymer/polymer#^1.4.0"
   },

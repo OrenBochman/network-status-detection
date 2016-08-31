@@ -4,17 +4,24 @@
 `network-status-detection`
 a web component helps you detect network status easily
 
-@demo demo/index.html 
+## Use with Polymer
+
+```
+<network-status-detection
+  isOnline="{{isOnline}}"></network-status-detection>
+
+
+<template is="dom-if" if="[[!isOnline]]">
+  <div>U r offline</div>
+</template>
+```
+
+@demo demo/index.html
 -->
 
 <dom-module id="network-status-detection">
   <template>
-    <style>
-      :host {
-        display: block;
-      }
-    </style>
-    <h2>Hello [[prop1]]</h2>
+
   </template>
 
   <script>
@@ -23,11 +30,30 @@ a web component helps you detect network status easily
       is: 'network-status-detection',
 
       properties: {
-        prop1: {
-          type: String,
-          value: 'network-status-detection',
-        },
+        isOnline: {
+          notify: true
+        }
       },
+
+      attached() {
+        if(navigator.onLine) {
+          this.isOnline = true;
+        } else {
+          this.isOnline = false;
+        }
+
+        // es6 way of doing this
+        // safari 9 doesn't support it
+        // window.addEventListener('online', () => this.isOnline = true);
+        // window.addEventListener('offline', () => this.isOnline = false);
+
+        window.addEventListener('online', function() {
+          this.isOnline = true;
+        }.bind(this));
+        window.addEventListener('offline', function() {
+          this.isOnline = false;
+        }.bind(this));
+      }
 
     });
   </script>

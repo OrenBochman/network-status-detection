@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head>
+    <title>network-status-detection demo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="../network-status-detection.html">
+  </head>
+  <body>
+    <div id="result"></div>
+    <network-status-detection></network-status-detection>
+    <script>
+      var ele = document.querySelector('network-status-detection')
+      document.querySelector('#result').innerHTML = ele.isOnline
+      ele.addEventListener('is-online-changed', function() {
+        document.querySelector('#result').innerHTML = ele.isOnline
+      })
+    </script>
+  </body>
+</html>
