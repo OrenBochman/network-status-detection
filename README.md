@@ -2,12 +2,17 @@
 
 a web component helps you detect network status easily
 
+## Installation
+
+```
+bower install network-status-detection
+```
+
 ## Use with Polymer (Or any databinding System)
 
 ```html
 <network-status-detection
   isOnline="{{isOnline}}"></network-status-detection>
-
 
 <template is="dom-if" if="[[!isOnline]]">
   <!-- anything inside will show only when offline  -->
